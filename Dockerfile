@@ -19,6 +19,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
     gfortran \
+	libpcl-dev \
     gcc && \
     rm -rf /var/lib/apt/lists/*
 
