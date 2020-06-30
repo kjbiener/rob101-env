@@ -85,6 +85,10 @@ RUN conda install --quiet --yes \
 RUN julia -e 'import Pkg; Pkg.update()' && \
     (test $TEST_ONLY_BUILD || julia -e 'import Pkg; Pkg.add("HDF5")') && \
     julia -e "using Pkg; pkg\"add IJulia\"; pkg\"precompile\"" && \
+
+    # Adds Stephen Boyd's VMLS package
+    julia -e "using Pkg; Pkg.add(PackageSpec(url=\"https://github.com/VMLS-book/VMLS.jl\")); pkg\"precompile\"" && \
+    
     # move kernelspec out of home \
     mv "${HOME}/.local/share/jupyter/kernels/julia"* "${CONDA_DIR}/share/jupyter/kernels/" && \
     chmod -R go+rx "${CONDA_DIR}/share/jupyter" && \
