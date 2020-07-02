@@ -64,7 +64,7 @@ WORKDIR $HOME
 LABEL repo2docker.ref="master"
 LABEL repo2docker.repo="https://github.com/machar94/rob101-env"
 LABEL repo2docker.version="0.11.0+54.gbbc3ee0"
-LABEL tljh_repo2docker.mem_limit="2"
+LABEL tljh_repo2docker.mem_limit="4G"
 LABEL tljh_repo2docker.cpu_limit="1"
 LABEL tljh_repo2docker.display_name="python-julia-v1"
 LABEL tljh_repo2docker.image_name="python-julia-v1:master"
